@@ -1,0 +1,82 @@
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+apply plugin: 'org.jetbrains.dokka-android'
+
+version = VERSION_NAME
+group = POM_GROUP
+
+
+
+bintray {
+    user = bintrayUser
+    key = bintrayApiKey
+    publications = ['MyPublication']
+    publish = true
+    configurations = ['archives']
+    pkg {
+        repo = POM_GROUP
+        name = POM_ARTIFACT_ID
+        userOrg = bintrayUser
+        licenses = ["Apache-2.0"]
+        vcsUrl = bintrayRepoUrl
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = POM_DESCRIPTION
+            name = VERSION_NAME
+        }
+    }
+}
+
+/*
+task sourcesJar(type: Jar) {
+    from('/Users/pierre-alexandrevezinet/AndroidStudioProjects/gl-android-sdk/umanlife-android-library/src/main/java')
+    classifier = 'sources'
+}*/
+
+/*task kotlinDoc(type: Jar) {
+    from('/Users/pierre-alexandrevezinet/AndroidStudioProjects/gl-android-sdk/umanlife-android-library/build/dokka/')
+    classifier = 'javadoc'
+}*/
+
+
+dokka() {
+    moduleName = 'data'
+    outputFormat = 'javadoc'
+    outputDirectory = "$buildDir/javadoc"
+    jdkVersion = 6 // Used for linking to JDK
+
+}
+
+
+
+
+
+
+
+
+publishing {
+    publications {
+        myPublication(MavenPublication) {
+            groupId POM_GROUP
+            artifactId POM_ARTIFACT_ID
+            version VERSION_NAME
+            //artifact sourcesJar
+        }
+    }
+}
+
+
+artifacts {
+    //archives kotlinDoc //, sourcesJar
+    //archives dokka
+    //archives deleteunuseddokkaassets
+
+}
+
+
+
+
+
