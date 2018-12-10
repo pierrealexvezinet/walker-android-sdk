@@ -1,0 +1,23 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/walker-android-sdk.iml
+.idea/workspace.xml
+build/android-profile
+app/libs/
+app/src/main/java/com/gl/gl_android_sdk/
+build/kotlin/
+gl-android-library/libs/
+gl-android-library/src/main/res/drawable/
+.gradle/
+.idea/kotlinc.xml
+.idea/libraries/
+app/src/androidTest/java/com/walker/
+app/src/main/java/com/walker/walker_android_sdk/
+app/src/test/java/com/walker/
+walker-android-library/libs/
+walker-android-library/src/androidTest/java/com/walker/
+walker-android-library/src/main/java/com/walker/
+walker-android-library/src/main/res/drawable/
+walker-android-library/src/test/java/com/walker/

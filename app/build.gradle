@@ -8,7 +8,7 @@ android {
     compileSdkVersion 26
     buildToolsVersion "27.0.1"
     defaultConfig {
-        applicationId "com.gl.gl_android_sdk"
+        applicationId "com.walker.walker_android_sdk"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
